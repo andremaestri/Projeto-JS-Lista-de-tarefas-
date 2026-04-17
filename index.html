@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>To-Do-List</title>
+</head>
+<body>
+    <header>
+        <nav>    <h1>Lista de Tarefas</h1>
+        <a href="">Inicio</a>
+        <a href="">Tarefas</a>
+        <a href="">Contatos</a>
+    </nav>
+    
+    
+    </header>
+    <div id="inicio" class="container">
+        <h2>Adicionar nova tarefa</h2>
+       
+
+     <div>
+        <input type="text" placeholder="Digite uma terafa" id="tarefaInput">
+        <button onclick="adicionarTarefa">Adicionar</button>
+     </div>
+     
+        <ul id="listaTarefas"></ul>
+
+    </div>
+    <footer id="Contato">
+        <p>&copy; 2026 Maestri, Todos direitos reservados</p>
+    </footer>
+
+    <script>
+
+        let tarefas = [];
+
+        function adicionarTarefa(){
+            const input = document.getElementById('tarefaInput')
+            const tarefa = input.value.trim();
+            if(tarefa){
+                tarefas.push(tarefa);
+                input.value = '';
+                atualizarLista();
+            }
+
+        }
+
+        function removerTarefa(index){
+            tarefas.splice(index, 1);
+            atualizarLista();
+        }
+
+        function atualizarLista(){
+            const lista = document.getElementById('listaTarefas')
+            lista.innerHTML = '';
+            tarefas.forEach((tarefa, index) => {
+                const li = document.reateElement('li')
+                li.innerHTML=`${tarefa}<button
+                 onclick="removerTarefa(${index}")>Remover</button>`
+
+                    lista.appendChild(li);
+
+                    });
+        }
+
+    </script>
+
+</body>
+</html>
