@@ -1,0 +1,31 @@
+body{
+    font-family: arial, Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgb(248, 251, 255)
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    font-size: px;
+}
+
+.container{
+    text-align: center;
+   border: 2px solid;
+   width: auto;
+}
+
+footer{
+    margin-top: auto;
+    color: rgba(0, 0, 0, 0.445);
+    text-align: center;
+    background-color: rgba(158, 158, 158, 0.226);
+     
+
+}
